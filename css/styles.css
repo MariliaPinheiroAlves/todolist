@@ -3,33 +3,33 @@
     padding: 0;
     margin: 0;
     font-family: "SUSE", sans-serif;
-    color: #342F37;
+    color: #2C3E50;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #9da3a4;
+    background-color: #ECF0F1;
     background-position: center;
     background-size: cover;
 }
 
 button {
-    background-color: #E0E1E1;
-    color: #342F37;
-    border: 1px solid #342F37;
     border-radius: .4rem;
     padding: .3rem .6rem;
     font-size: 1rem;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: .6s;
+    transition: background-color .3s ease;
+
+    cursor: pointer;
+    background-color: #2980B9;
+    color: #fff;
+    border: none;
 }
 
 button:hover {
-    background-color: #342F37;
-    color: #fff;
+    background-color: #3498DB;
 }
 
 button:hover>i {
@@ -54,17 +54,19 @@ select {
 /* Todo header */
 
 .container {
-    max-width: 450px;
-    margin: 3rem auto 0;
-    background-color: #EAEBEB;
+    max-width: 80%;
+    margin: 3rem auto;
     padding: 1.5rem;
     border-radius: 15px;
+
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .container header {
     text-align: center;
     padding: 0 1rem 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #BDC3C7;
 }
 
 /* todo form */
@@ -72,12 +74,12 @@ select {
 #todo-form,
 #edit-form {
     padding: 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #BDC3C7;
 }
 
 #todo-form p,
 #edit-form p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     font-weight: bold;
 }
 
@@ -91,12 +93,14 @@ select {
 
 #cancel-edit-btn {
     margin-top: 1rem;
+    background-color: #E74C3C;
+    color: #fff;
 }
 
 /* todo toolbar */
 #toolbar {
     padding: 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #BDC3C7;
     display: flex;
 }
 
@@ -105,7 +109,7 @@ select {
 }
 
 #search {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #BDC3C7;
     padding-right: 1rem;
     margin-right: 1rem;
     width: 65%;
@@ -119,7 +123,8 @@ select {
 
 #search input {
     width: 100%;
-    margin-right: .3rem;
+    margin-right: 1rem;
+    border: 1px solid #BDC3C7;
 }
 
 #filter {
@@ -134,41 +139,44 @@ select {
 
 /* todo-list */
 #todo-list {
-    background-color: #EAEBEB;
     padding: 1.5rem;
     border-radius: 15px;
-    width: 70%;
+    width: 80%;
     margin: 2rem auto;
+
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #todo-list h2 {
-    margin-bottom: .75rem;
+    margin-bottom: 1rem;
 }
 
 .todo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #cacaca;
-    transition: .3s;
+    border-bottom: 1px solid #BDC3C7;
+    background-color: #fff;
+    transition: background-color .3s ease;
 }
 
 .todo h3 {
     flex: 1;
-    font-size: .9rem;
+    font-size: 1rem;
 }
 
 .todo button {
-    margin-left: .4rem;
+    margin-left: 1rem;
 }
 
 .done {
-    background-color: #becdc0;
+    background-color: #aacff8;
 }
 
 .done h3 {
-    color: #848d85;
+    color: #342F37;
 }
 
 .done button:first-of-type {
@@ -182,4 +190,35 @@ select {
 
 .done button:first-of-type:hover {
     background-color: #342F37;
+}
+
+button {
+    position: relative;
+}
+
+button[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #342F37;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+button[data-tooltip]:hover::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #342F37 transparent;
+    z-index: 10;
 }
