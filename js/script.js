@@ -18,6 +18,7 @@ const loadTarefas = () => {
         arrayDeTarefas.forEach((tarefa) => {
             exibirTarefa(tarefa);
         });
+        console.log(arrayDeTarefas);
     } catch (error) {
         console.error("Erro ao carregar tarefas: ", error);
         alert("Ocorreu um erro ao carregar as tarefas.");
@@ -63,7 +64,6 @@ const exibirTarefa = (tarefa) => {
     }
 };
 
-
 const toggleForms = () => {
     try {
         editForm.classList.toggle("hidden");
@@ -95,16 +95,16 @@ const editarTarefa = (tarefaASerEditada) => {
 
 const busca = (search) => {
     try {
-        const todos = document.querySelectorAll(".todo");
+        const tarefas = document.querySelectorAll(".todo");
 
-        todos.forEach((todo) => {
-            let todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+        tarefas.forEach((tarefa) => {
+            let todoTitle = tarefa.querySelector("h3").innerText.toLowerCase();
             const normalizedSearch = search.toLowerCase();
 
-            todo.style.display = "flex";
+            tarefa.style.display = "flex";
 
             if (!todoTitle.includes(normalizedSearch)) {
-                todo.style.display = "none";
+                tarefa.style.display = "none";
             }
         });
     } catch (error) {
@@ -144,18 +144,16 @@ const filtro = (valorDoFiltro) => {
     }
 };
 
-
 const toggleDone = (tarefaASerMarcada) => {
     arrayDeTarefas = arrayDeTarefas.map((tarefa) => {
         if (tarefa.titulo === tarefaASerMarcada) {
-            tarefa.done = !tarefa.done; 
+            tarefa.done = !tarefa.done;
         }
         return tarefa;
     });
 
     loadTarefas();
 };
-
 
 const removerTarefa = (tituloDaTarefaParaRemover) => {
     const indiceDaTarefaParaRemover = arrayDeTarefas.findIndex((tarefa) => tarefa.titulo === tituloDaTarefaParaRemover);
@@ -193,7 +191,6 @@ todoForm.addEventListener("submit", (e) => {
       alert("Ocorreu um erro ao adicionar a tarefa.");
   }
 });
-
 
 document.addEventListener("click", (e) => {
     try {
@@ -272,4 +269,3 @@ filterBtn.addEventListener("change", (e) => {
         alert("Ocorreu um erro ao aplicar o filtro.");
     }
 });
-``

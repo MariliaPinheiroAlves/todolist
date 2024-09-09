@@ -1,6 +1,6 @@
 # Santander Coders - Ada Tech
 
-Este projeto foi desenvolvido para o módulo de lógica de programação da Ada Tech ministrado pelo professor Adriano Neres. Trabalhamos na criação de uma aplicação de lista de tarefas (ToDo List), onde é possível adicionar uma tarefa, editar uma tarefa salva, remover uma tarefa salva, listar todas as tarefas salvas e obter uma tarefa através de um parâmetro (id). Para isso utilizamos um array para armazenar a lista das tarefas cadastradas, não havendo a persistência das tarefas em banco de dados.
+Este projeto foi desenvolvido para o módulo de lógica de programação da Ada Tech ministrado pelo professor Adriano Neres. Trabalhamos na criação de uma aplicação de lista de tarefas (ToDo List), onde é possível adicionar uma tarefa, editar uma tarefa salva, remover uma tarefa salva, listar todas as tarefas salvas e obter uma tarefa através de um parâmetro (nome da tarefa). Para isso utilizamos um array para armazenar a lista das tarefas cadastradas, não havendo a persistência das tarefas em banco de dados.
 
 ## 🛠️ Linguagens e Ferramentas
 
